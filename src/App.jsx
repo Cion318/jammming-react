@@ -21,12 +21,12 @@ function App() {
 
       setPlaylistTracks((prevTracks) => [...prevTracks, track]);
     },
-    [playlistTracks]
+    [playlistTracks],
   );
 
   const removeTrack = useCallback((track) => {
     setPlaylistTracks((prevTracks) =>
-      prevTracks.filter((currentTrack) => currentTrack.id !== track.id)
+      prevTracks.filter((currentTrack) => currentTrack.id !== track.id),
     );
   }, []);
 
@@ -44,9 +44,12 @@ function App() {
 
   return (
     <div>
-      <h1 className="text-8xl font-bold text-white-900 m-20">
+      <h1 className="text-white-900 font-bold sm:my-10 sm:text-7xl lg:text-8xl">
         Ja<span className="text-green-600">mmm</span>ing
       </h1>
+      <h2 className="text-white-800 sm:m-10 sm:text-lg lg:text-xl">
+        Your source to create fast Spotify playlists.
+      </h2>
       <div>
         <SearchBar onSearch={search} />
         <div className="flex">
