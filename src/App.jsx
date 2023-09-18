@@ -1,18 +1,27 @@
 import { useCallback, useState } from "react";
 import "./App.css";
+import AccessKey from "./components/AccessKey";
 import Playlist from "./components/Playlist";
 import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
 import Spotify from "./utils/Spotify";
 
 function App() {
+  const [clientId, setClientId] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [playlistName, setPlaylistName] = useState("");
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
-  const search = useCallback((term) => {
-    Spotify.search(term).then(setSearchResults);
-  }, []);
+  const handleAccessKeyChange = (newAccessKey) => {
+    setClientId(newAccessKey);
+  };
+
+  const search = useCallback(
+    (term) => {
+      Spotify.search(term, clientId).then(setSearchResults);
+    },
+    [clientId],
+  );
 
   const addTrack = useCallback(
     (track) => {
@@ -36,11 +45,11 @@ function App() {
 
   const savePlaylist = useCallback(() => {
     const trackUris = playlistTracks.map((track) => track.uri);
-    Spotify.savePlaylist(playlistName, trackUris).then(() => {
+    Spotify.savePlaylist(playlistName, trackUris, clientId).then(() => {
       setPlaylistName("New Playlist");
       setPlaylistTracks([]);
     });
-  }, [playlistName, playlistTracks]);
+  }, [playlistName, playlistTracks, clientId]);
 
   return (
     <div>
@@ -51,8 +60,9 @@ function App() {
         Your source to create fast Spotify playlists.
       </h2>
       <div>
+        <AccessKey onAccessKeyChange={handleAccessKeyChange} />
         <SearchBar onSearch={search} />
-        <div className="flex">
+        <div className="xl:flex">
           <SearchResults searchResults={searchResults} onAdd={addTrack} />
           <Playlist
             playlistName={playlistName}

@@ -1,3 +1,5 @@
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import { useCallback, useState } from "react";
 
@@ -13,18 +15,18 @@ const SearchBar = ({ onSearch }) => {
   }, [term, onSearch]);
 
   return (
-    <div>
+    <div className="m-10 flex items-center justify-center">
       <input
         type="text"
         placeholder="Search Title"
         onChange={handleTermChange}
-        className="w-1/2 px-4 py-2 border border-green-600 rounded-md focus:ring focus:ring-green-500 focus:border-green-500"
+        className="border border-green-600 px-2 py-2 focus:border-green-500 sm:w-1/2 xl:w-1/3"
       />
       <button
         onClick={search}
-        className="m-10 px-20 text-white bg-green-500 rounded-r-md hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-300 focus:ring-opacity-50"
+        className="m-1 bg-green-500 px-3 py-2 text-white hover:bg-green-600"
       >
-        Search
+        <FontAwesomeIcon icon={faSearch} />
       </button>
     </div>
   );

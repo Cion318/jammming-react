@@ -7,20 +7,20 @@ const Playlist = ({ onNameChange, playlistTracks, onRemove, onSave }) => {
     (e) => {
       onNameChange(e.target.value);
     },
-    [onNameChange]
+    [onNameChange],
   );
 
   return (
-    <div className="bg-zinc-800 m-10 w-1/2 border border-green-600 rounded-md">
+    <div className="sm:w-100 m-5 border border-green-600 bg-zinc-800 xl:w-1/2">
       <input
-        className="m-10 p-3 text-white-900 border border-green-600 rounded-md"
+        className="text-white-900 m-10 border border-green-600 px-5 py-3"
         onChange={handleNameChange}
         defaultValue={"New Playlist"}
       />
       <Tracklist tracks={playlistTracks} isRemoval={true} onRemove={onRemove} />
       <button
         onClick={onSave}
-        className="m-10 px-20 text-white bg-green-500 rounded-r-md hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-300 focus:ring-opacity-50"
+        className="m-5 bg-green-500 px-10 py-2 text-white hover:bg-green-600"
       >
         Save to Spotify
       </button>
