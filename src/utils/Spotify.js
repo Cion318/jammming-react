@@ -1,5 +1,5 @@
-const redirectUri = "http://localhost:5173/"; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
-//const redirectUri = "https://cion318.github.io/jammming-react/";
+//const redirectUri = "http://localhost:5173/"; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
+const redirectUri = "https://cion318.github.io/jammming-react/";
 let accessToken;
 
 const Spotify = {
