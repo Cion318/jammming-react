@@ -20,11 +20,11 @@ const SearchBar = ({ onSearch }) => {
         type="text"
         placeholder="Search Title"
         onChange={handleTermChange}
-        className="border border-green-600 px-2 py-2 focus:border-green-500 sm:w-1/2 xl:w-1/3"
+        className="border border-green-600 px-1 py-1 focus:border-green-500 sm:w-1/2 sm:px-2 sm:py-2 xl:w-1/3"
       />
       <button
         onClick={search}
-        className="m-1 bg-green-500 px-3 py-2 text-white hover:bg-green-600"
+        className="m-1 border border-green-600 bg-green-600 px-2 py-1 text-white hover:bg-green-600 sm:px-3 sm:py-2"
       >
         <FontAwesomeIcon icon={faSearch} />
       </button>

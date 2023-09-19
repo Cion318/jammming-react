@@ -28,10 +28,13 @@ const Track = ({ track, onAdd, onRemove, isRemoval }) => {
   return (
     <div className="m-5 mx-auto flex items-center justify-between border-b border-green-500 px-5 text-left">
       <div className="m-1 py-2 ">
-        <h2 className="text-xl font-medium text-white">{track.name}</h2>
-        <p className="text-white-700">
-          {track.artist} | {track.album}
-        </p>
+        <h2 className="text-sm font-medium text-white">{track.name}</h2>
+        <div className="flex">
+          <p className="text-white-700 text-sm">{track.artist} &nbsp; </p>
+          <p className="text-white-700 hidden text-sm md:block">
+            | {track.album} &nbsp;{" "}
+          </p>
+        </div>
       </div>
       {renderAction()}
     </div>

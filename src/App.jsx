@@ -53,16 +53,16 @@ function App() {
 
   return (
     <div>
-      <h1 className="text-white-900 font-bold sm:my-10 sm:text-7xl lg:text-8xl">
+      <h1 className="text-white-900 my-10 text-5xl font-bold sm:text-7xl lg:text-8xl">
         Ja<span className="text-green-600">mmm</span>ing
       </h1>
-      <h2 className="text-white-800 sm:m-10 sm:text-lg lg:text-xl">
+      <h2 className="text-white-800 m-5 text-sm sm:m-10 sm:text-lg lg:text-xl">
         Your source to create fast Spotify playlists.
       </h2>
       <div>
         <AccessKey onAccessKeyChange={handleAccessKeyChange} />
         <SearchBar onSearch={search} />
-        <div className="xl:flex">
+        <div className="lg:flex">
           <SearchResults searchResults={searchResults} onAdd={addTrack} />
           <Playlist
             playlistName={playlistName}

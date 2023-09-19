@@ -13,25 +13,25 @@ const AccessKey = ({ onAccessKeyChange }) => {
 
   return (
     <>
-      <div className="sm:m-3">
-        <label className="" htmlFor="accessKey">
-          Enter your Spotify Access-Key and get started
+      <div className="m-2">
+        <label className="text-sm sm:text-lg" htmlFor="accessKey">
+          Enter your Spotify Access-Key
         </label>
       </div>
-      <div className="sm:m-3">
+      <div className="m-2">
         <input
           type="password"
           id="accessKey"
           name="AccessKey"
           value={accessKey}
           onChange={handleAccessKeyChange}
-          className="border sm:m-3 sm:w-1/2 sm:px-2 lg:w-1/3"
+          className="m-3 w-2/3 border sm:w-1/2 sm:px-2 lg:w-1/3"
         />
         <a
           href="https://developer.spotify.com/documentation/web-api/concepts/apps"
           target="_blank"
           rel="noreferrer"
-          className="sm-m-3 sm:px-2 sm:text-xl"
+          className="m-3 sm:px-2 sm:text-xl"
         >
           <FontAwesomeIcon icon={faQuestionCircle} />
         </a>
