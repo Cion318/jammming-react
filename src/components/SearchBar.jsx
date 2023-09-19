@@ -15,7 +15,7 @@ const SearchBar = ({ onSearch }) => {
   }, [term, onSearch]);
 
   return (
-    <div className="m-10 flex items-center justify-center">
+    <div className="m-10 mx-auto flex items-center justify-center">
       <input
         type="text"
         placeholder="Search Title"
